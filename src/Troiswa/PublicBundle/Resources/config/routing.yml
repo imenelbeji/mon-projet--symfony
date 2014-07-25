@@ -1,0 +1,59 @@
+#nom de l'application
+troiswa_public_homepage:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:Main:index }
+
+troiswa_public_bonjour:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /bonjour
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:Main:bonjour }
+
+troiswa_public_variable:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /age/{number}
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:Main:age }
+    #restriction la variable est un nombre
+    requirements:
+       number: \d+
+
+troiswa_public_competences:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /competences
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:Main:competences }
+
+troiswa_public_resource_film:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/film.yml"
+
+
+troiswa_public_resource_acteur:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/acteur.yml"
+
+
+
+troiswa_public_resource_admin:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/admin.yml"
+    prefix:   /admin
+
+troiswa_public_contact:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /contact
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:Main:contact }
+
+troiswa_public_resource_categorie:
+    resource: "@TroiswaPublicBundle/Resources/config/routing/categorie.yml"    

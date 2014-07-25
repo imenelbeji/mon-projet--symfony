@@ -1,0 +1,105 @@
+{% extends 'TroiswaPublicBundle::layout.html.twig' %}
+
+{% block titre %}
+
+  Contact     
+
+
+{% endblock  %}
+
+{% block body %}
+
+<div class="container">
+      
+      <div class="row">
+      
+        <div class="col-lg-12">
+          <h1 class="page-header">Contactez-nous</h1>
+          <ol class="breadcrumb">
+            <li><a href="{{path('troiswa_public_homepage') }}">Home</a></li>
+            <li class="active">Contact</li>
+          </ol>
+        </div>
+        
+        <div class="col-lg-12">
+          <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+          <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2625.038040234126!2d2.3856503!3d48.857485!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66df5b6ced013%3A0xee00bc04fe67a76d!2s4+Rue+la+Vacquerie%2C+75011+Paris%2C+France!5e0!3m2!1sfr!2s!4v1406115642116">"</iframe>
+        
+        
+
+
+        </div>
+
+      </div><!-- /.row -->
+      
+      <div class="row">
+
+        <div class="col-sm-8">
+          <h3>Let's Get In Touch!</h3>
+          <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis fugats vitaes nemo minima rerums unsers sadips amets. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            {{ form_start(formContact, { 'attr' : { 'novalidate' : 'novalidate' } } ) }}
+              <div class="row">
+                
+                <div class="form-group col-lg-4">
+                  {{ form_label(formContact.name) }}
+                  {{ form_errors(formContact.name) }}
+                  {{ form_widget(formContact.name, { 'attr' : { 'class' : 'form-control','placeholder' : "Inscrivez votre email" } } ) }}
+                </div>
+                
+                <div class="form-group col-lg-4">
+                  {{ form_label(formContact.email) }}
+                  {{ form_errors(formContact.email) }}
+                  {{ form_widget(formContact.email, { 'attr' : { 'class' : 'form-control','placeholder' : "Inscrivez votre numero" } } ) }}
+                </div>
+                
+                <div class="form-group col-lg-4">
+                  {{ form_label(formContact.phone) }}
+                  {{ form_errors(formContact.phone) }}
+                  {{ form_widget(formContact.phone, { 'attr' : { 'class' : 'form-control','placeholder' : "Inscrivez votre email" } } ) }}
+                </div>
+                
+                <div class="clearfix"></div>
+                <div class="form-group col-lg-12">
+                  {{ form_label(formContact.message) }}
+                  {{ form_errors(formContact.message) }}
+                  {{ form_widget(formContact.message, { 'attr' : { 'class' : 'form-control','placeholder' : "Inscrivez votre numero" } } ) }}
+                </div>
+                
+                <div class="form-group col-lg-12">
+                  {{ form_widget(formContact.ajouter, { 'attr' : { 'class' : 'btn btn-danger' } } ) }}
+                </div>
+              </div>
+            
+            {{ form_end(formContact) }}
+
+
+         
+
+
+        </div>
+
+        <div class="col-sm-4">
+          <h3>3W Academy</h3>
+          <h4>Ecole de formation au métier de développeur-intégrateur web</h4>
+          <p>
+            4 rue de La Vacquerie,<br>
+            75011 Paris<br>
+          </p>
+          <p><i class="fa fa-phone"></i> <abbr title="Phone">P</abbr>: 0634466840</p>
+          <p><i class="fa fa-envelope-o"></i> <abbr title="Email">E</abbr>: <a href="mailto:feedback@startbootstrap.com">hs_imen@hotmail.com</a></p>
+          <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
+          <ul class="list-unstyled list-inline list-social-icons">
+            <li class="tooltip-social facebook-link"><a href="#facebook-page" data-toggle="tooltip" data-placement="top" title="Facebook"><i class="fa fa-facebook-square fa-2x"></i></a></li>
+            <li class="tooltip-social linkedin-link"><a href="#linkedin-company-page" data-toggle="tooltip" data-placement="top" title="LinkedIn"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
+            <li class="tooltip-social twitter-link"><a href="#twitter-profile" data-toggle="tooltip" data-placement="top" title="Twitter"><i class="fa fa-twitter-square fa-2x"></i></a></li>
+            <li class="tooltip-social google-plus-link"><a href="#google-plus-page" data-toggle="tooltip" data-placement="top" title="Google+"><i class="fa fa-google-plus-square fa-2x"></i></a></li>
+          </ul>
+        </div>
+
+      </div><!-- /.row -->
+
+    </div><!-- /.container -->
+
+
+
+{% endblock  %}

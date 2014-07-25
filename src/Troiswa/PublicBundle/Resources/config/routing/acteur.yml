@@ -1,0 +1,17 @@
+troiswa_public_acteurs:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /acteurs
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:acteur:acteurs }
+
+troiswa_public_acteur:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /acteur/{number}
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:acteur:acteur }
+    requirements:
+        number: \d+

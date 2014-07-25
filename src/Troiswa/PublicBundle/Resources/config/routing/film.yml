@@ -1,0 +1,17 @@
+troiswa_public_films:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /films
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:film:films }
+
+troiswa_public_film:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /film/{number}
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:film:film }
+    requirements:
+       number: \d+

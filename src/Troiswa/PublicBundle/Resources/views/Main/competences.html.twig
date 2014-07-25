@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Balises Structurantes HTML5</title>
+    <style>
+     
+        div,h1,h2{
+
+            text-align :center;
+
+        }
+    
+    </style>
+
+</head>
+
+<body>
+<h1>Symfony twig</h1>
+
+<h2>Mes compétences : </h2>
+
+  {% for comp, info in competences %}
+    
+        <div> 
+            <h3>{{ comp }}</h3> 
+            <input type="text" value="{{ info.note }}" class="dial" data-max="10" data-width="75" data-fgColor="{{ info.couleur }}" data-readOnly="true">
+        </div>
+        
+        {# dump(competences) #}
+     
+     <hr>
+
+
+{% endfor %}  
+    
+ <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>  
+ <script src="{{ asset('js/jquery.knob.js') }}"></script>  
+ 
+ 
+        <script>
+        
+        $(document).ready(function() {
+            
+            $(".dial").knob();
+        });
+        
+        </script>
+</body>
+</html>

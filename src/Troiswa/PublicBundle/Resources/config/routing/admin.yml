@@ -1,0 +1,25 @@
+troiswa_public_admin_acteur_ajouter:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /acteur/ajouter
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:acteur:admin_acteur_ajouter }
+
+troiswa_public_admin_acteur_update:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /acteur/update/{number}
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:acteur:admin_acteur_update }
+    requirements:
+        number: \d+
+
+troiswa_public_admin_film_ajouter:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /film/ajouter/
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:film:admin_film_ajouter }

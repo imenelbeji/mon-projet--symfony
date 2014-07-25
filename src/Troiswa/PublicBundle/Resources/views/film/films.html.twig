@@ -1,0 +1,84 @@
+{% extends 'TroiswaPublicBundle::layout.html.twig' %}
+
+{% block titre %}
+
+  Nos films  {{ parent() }}           
+
+
+{% endblock  %}
+
+{% block body %}
+
+<div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-12">
+                <h1 class="page-header">Films toujours à l'affiche</h1>
+                
+                <ol class="breadcrumb">
+                    <li><a href="{{path('troiswa_public_homepage')}}">Home</a>
+                    </li>
+                    <li class="active">films</li>
+                </ol>
+            </div>
+
+        </div>
+
+        {% for film in films %}
+        
+        <div class="row">
+        
+            
+            <div class="col-md-7">
+                <a href="portfolio-item.html">
+                    
+
+
+
+                    <img class="img-responsive" src="{{ asset(film.webPath) }}">
+                </a>
+            </div>
+
+            <div class="col-md-5">
+                <h3>{{ film.titre }}</h3>
+                <p>{{ film.synopsis }}</p>
+                <a class="btn btn-primary" href="{{ path('troiswa_public_film',{"number": film.id }) }}">View film <i class="fa fa-angle-right"></i></a>
+            </div>
+
+        </div>
+
+        <hr>
+
+       {% endfor %} 
+        
+        <div class="row text-center">
+
+            <div class="col-lg-12">
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a>
+                    </li>
+                    <li class="active"><a href="#">1</a>
+                    </li>
+                    <li><a href="#">2</a>
+                    </li>
+                    <li><a href="#">3</a>
+                    </li>
+                    <li><a href="#">4</a>
+                    </li>
+                    <li><a href="#">5</a>
+                    </li>
+                    <li><a href="#">&raquo;</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+{% endblock  %}

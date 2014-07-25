@@ -1,0 +1,141 @@
+{% extends 'TroiswaPublicBundle::layout.html.twig' %}
+
+    {% block titre %}
+
+      Nos acteurs       
+
+
+    {% endblock  %}
+
+
+{% block css %}
+    
+    <link href="{{ asset('css/test.css') }}" rel="stylesheet">
+          
+
+{% endblock  %}
+
+
+
+{% block body %}
+
+
+
+    {% for message in app.session.flashbag.get('info') %}
+    
+        <div class="alert alert-success">{{ message }}</div>
+    
+    {% endfor %}
+    
+    {# form(formActeur) #}
+
+
+
+{# colone dimention et offset pour decaler  #}
+<br>
+
+<div class="row">
+    
+    <div class="col-md-4 col-md-offset-4" class="form">    
+     
+     {# on enleve validation html5 #}
+    {{ form_start(formActeur, { 'attr' : { 'novalidate' : 'novalidate' } } ) }}  
+
+           <div class="form-group">   
+            
+            {# genere le label #}
+            {{ form_label(formActeur.prenom, null, {'label_attr' : {'class': 'color'} } ) }}  
+            {# genere l'input  #}
+            {{ form_widget(formActeur.prenom, { 'attr' : { 'class' : 'form-control',
+            'placeholder' : "Inscrivez le prenom" } } ) }}
+            {# affiche les erreur #}
+            {{ form_errors(formActeur.prenom) }}
+         
+          </div>
+        
+        <br>
+      
+          <div class="form-group">  
+            
+            {{ form_label(formActeur.nom, null, {'label_attr' : {'class': 'color'} }) }}  
+
+            {{ form_widget(formActeur.nom, { 'attr' : { 'class' : 'form-control',         'placeholder' : "Inscrivez le nom" } } ) }}
+
+            {{ form_errors(formActeur.nom) }}
+          
+          </div>
+          
+        <br>
+          
+          <div class="form-group">  
+            
+            {{ form_label(formActeur.dateNaissance, null, {'label_attr' : {'class': 'color'} }) }}  
+
+            {{ form_widget(formActeur.dateNaissance, { 'attr' : { 'class' : '' } } ) }}
+
+            {{ form_errors(formActeur.dateNaissance) }}
+          
+          </div>
+          
+        <br>
+          
+          <div class="form-group">  
+            
+            {{ form_label(formActeur.sexe, null, {'label_attr' : {'class': 'color'} }) }}  
+
+            {{ form_widget(formActeur.sexe, { 'attr' : { 'class' : '' } } ) }}
+
+            {{ form_errors(formActeur.sexe) }}
+
+          </div>
+
+        <br>
+          
+          <div class="form-group">  
+              
+              {{ form_label(formActeur.fichier, null, {'label_attr' : {'class': 'color'} }) }}  
+
+              {{ form_widget(formActeur.fichier, { 'attr' : { 'class' : '', 'placeholder' : "image"  } } ) }}
+
+              {{ form_errors(formActeur.fichier) }}
+
+            
+            </div>
+        <br>  
+          
+          <div class="form-group">    
+            
+            {{ form_label(formActeur.nationalite, null, {'label_attr' : {'class': 'color'} }) }}  
+
+            {{ form_widget(formActeur.nationalite, { 'attr' : { 'class' : 'form-control', 'placeholder' : "nationalité" } } ) }}
+            {{ form_errors(formActeur.nationalite) }}
+
+          </div>
+        <br> 
+
+
+          
+          <div class="form-group">  
+            
+            {{ form_label(formActeur.biographie, null, {'label_attr' : {'class': 'color'} }) }}  
+
+            {{ form_widget(formActeur.biographie, { 'attr' : { 'class' : 'form-control', 'placeholder' : "biographie"  } } ) }}
+
+            {{ form_errors(formActeur.biographie) }}
+
+          
+          </div>
+          
+          
+        <br>  
+       
+       {{ form_widget(formActeur.ajouter, { 'attr' : { 'class' : 'btn btn-danger' } } ) }}
+        
+
+    {{ form_end(formActeur) }} 
+<br>  
+    </div>
+
+</div>
+
+{% endblock  %}  

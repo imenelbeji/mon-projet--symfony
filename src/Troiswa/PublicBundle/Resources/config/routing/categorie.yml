@@ -1,0 +1,7 @@
+troiswa_public_categories:
+    #pour cree les routes on a d'abord l'url
+    #path:     /hello/{name}
+    path:     /categories
+    #lier l'url au controller il pointe directement vers le controlleur en question 
+    #3 parametres nom du bundle :controller:la fonction dans le controller
+    defaults: { _controller: TroiswaPublicBundle:categorie:categories }
